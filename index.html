@@ -4,41 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Epic Strategy - Strategy Game</title>
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div id="game-container">
         <canvas id="gameCanvas"></canvas>
-    </div>
-    
-    <div id="ui-container">
-        <div id="hud">
-            <div id="minimap"></div>
-            <div id="resource-panel">
-                <div class="resource" id="gold">Gold: <span>0</span></div>
-                <div class="resource" id="wood">Wood: <span>0</span></div>
-                <div class="resource" id="population">Population: <span>0</span></div>
+        <div id="ui-overlay">
+            <div id="hud">
+                <div class="resource-panel">
+                    <div class="resource gold">
+                        <span class="label">Gold:</span>
+                        <span id="gold-count" class="value">1000</span>
+                    </div>
+                    <div class="resource wood">
+                        <span class="label">Wood:</span>
+                        <span id="wood-count" class="value">500</span>
+                    </div>
+                    <div class="resource food">
+                        <span class="label">Food:</span>
+                        <span id="food-count" class="value">300</span>
+                    </div>
+                    <div class="resource stone">
+                        <span class="label">Stone:</span>
+                        <span id="stone-count" class="value">200</span>
+                    </div>
+                </div>
+                <div class="population-panel">
+                    <span class="label">Population:</span>
+                    <span id="population-count" class="value">50/100</span>
+                </div>
+                <div class="game-time">
+                    <span id="game-time">Time: 00:00</span>
+                </div>
             </div>
-            <div id="info-panel"></div>
-            <div id="control-panel">
-                <button id="btn-build">Build</button>
-                <button id="btn-train">Train</button>
-                <button id="btn-research">Research</button>
-                <button id="btn-diplomacy">Diplomacy</button>
-                <button id="btn-settings">Settings</button>
+            <div id="selection-panel">
+                <div id="unit-info" class="info-panel"></div>
+                <div id="building-info" class="info-panel"></div>
+            </div>
+            <div id="menu-panel">
+                <button id="pause-btn" class="btn">Pause</button>
+                <button id="settings-btn" class="btn">Settings</button>
+                <button id="help-btn" class="btn">Help</button>
             </div>
         </div>
     </div>
 
-    <script src="js/core/Game.js"></script>
-    <script src="js/core/Map.js"></script>
-    <script src="js/core/Player.js"></script>
-    <script src="js/units/Unit.js"></script>
-    <script src="js/buildings/Building.js"></script>
-    <script src="js/ai/AIOpponent.js"></script>
-    <script src="js/systems/ResourceSystem.js"></script>
-    <script src="js/systems/CombatSystem.js"></script>
-    <script src="js/ui/UIManager.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/units.js"></script>
+    <script src="js/buildings.js"></script>
+    <script src="js/resources.js"></script>
+    <script src="js/ai.js"></script>
+    <script src="js/input.js"></script>
+    <script src="js/renderer.js"></script>
 </body>
 </html>
